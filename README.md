@@ -23,6 +23,18 @@ döküman tabanlı bir nosql veritabanı gibi kullanmak doğru değildir. Biz el
 yönelebiliriz.)
 
 Elastic Stack Nedir ?
-1-Elasticsearch tarafından geliştirilen Xpack,Kibana,logstash,beats gibi ürünleri de kapsayan yapıya verilen isimdir. Bu ürünler genelde birlikte kullanılır.Bunların temelinde elasticsearch kullanılmaktadır.
+1-Elasticsearch tarafından geliştirilen Xpack,Kibana,logstash,beats gibi ürünleri de kapsayan yapıya verilen isimdir. 
+Bu ürünler genelde birlikte kullanılır.Bunların temelinde elasticsearch kullanılmaktadır.
+
 Kibana: Elasticsearch ün yönetimsel işlemlerini gerçekleştirdiğimiz veri görselleştirme ile alakalı özellikleri kullanabildiğimiz ve cluster yönetimi ile ilgili işlemlerde kullandığımız
 bir yönetimsel web arayüzüdür. Elasticsearch yönetim işlemlerini vs konsoldan da yapabiliyoruz ancak kibana bize daha kullanışlı bir web arayüzü  sunmaktadır.
+
+Logstash:Uygulama loglarının elasticsearche gönderilmesini sağlar ,dataproccesing olarakta isimlendirilebiir.input,filter ve output olmak üzere 3 tane ana yapısı vardır. 
+Kaynaktaki veriyi input aşamasında alır daha sonra belli bir filtreden geçirir ve output adımında verdiğiniz hedefe datanın gönderilmesinde sorumludur.
+
+Xpack: Elastic ve kibanaya ekstra fonksiyonlar kazandıran bir extension gibi düşünülebilir.Güvenlik , LDAP entegrasyonu, user rol tanımları, elastic monitoring, alerting, reporting gibi bir 
+çok extra özelliği biz Xpack aracılığıyla kullanıyoruz.
+
+Beats: Datanın toplanmasının sağlar. collect data diyoruz en yaygnın olanı filebit.metrikbit diye bir çeşidi vardır bu da servislerin metriklerinin toplanmasını sağlar. Genelde Logstash ile 
+birlikte çalışırlar ve alınan datanın elastic searche logstash aracılığıyla gönderilmesini sağlarlar.
+
